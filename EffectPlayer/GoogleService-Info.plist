@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>729464342122-n27aq82aho2pjj3e7lkiie76hf67pe77.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.729464342122-n27aq82aho2pjj3e7lkiie76hf67pe77</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAIk5cRhpA9LdTomrnon1EnvtS7GFBIGGQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>729464342122</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>hcrane.EffectSwitcher</string>
+	<key>PROJECT_ID</key>
+	<string>wannabe-simula</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wannabe-simula.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:729464342122:ios:ec5c003b47a2f610eaac13</string>
+	<key>DATABASE_URL</key>
+	<string>https://wannabe-simula.firebaseio.com</string>
+</dict>
+</plist>

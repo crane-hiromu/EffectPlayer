@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D03595C2A4C915500F67FED /* 12345.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D03595B2A4C915500F67FED /* 12345.wav */; };
+		1D0359E42A4CA89600F67FED /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0359E32A4CA89600F67FED /* SoundpipeAudioKit */; };
+		1D0F6CAE2A373A3100C7A6AD /* EffectPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F6CAD2A373A3100C7A6AD /* EffectPlayerApp.swift */; };
+		1D0F6CB02A373A3100C7A6AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F6CAF2A373A3100C7A6AD /* ContentView.swift */; };
+		1D0F6CB22A373A3200C7A6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0F6CB12A373A3200C7A6AD /* Assets.xcassets */; };
+		1D0F6CB62A373A3200C7A6AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0F6CB52A373A3200C7A6AD /* Preview Assets.xcassets */; };
+		1D0F6CDE2A373A6100C7A6AD /* DevoloopAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0F6CDD2A373A6100C7A6AD /* DevoloopAudioKit */; };
+		1D0F6CE12A373D2A00C7A6AD /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0F6CE02A373D2A00C7A6AD /* AudioKit */; };
+		1D398D842AA300A5006C9E3E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1D398D832AA300A5006C9E3E /* FirebaseDatabase */; };
+		1D398D862AA3018A006C9E3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D398D852AA3018A006C9E3E /* GoogleService-Info.plist */; };
+		1D398D882AA301FA006C9E3E /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D398D872AA301FA006C9E3E /* FirebaseModel.swift */; };
+		1D42D9AD2A5A6B0500732054 /* AudioSoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D42D9AC2A5A6B0500732054 /* AudioSoundModel.swift */; };
+		1D42D9AF2A5A6B7B00732054 /* MicrophoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D42D9AE2A5A6B7B00732054 /* MicrophoneModel.swift */; };
+		1DC7715B2A9360EB00C04B82 /* DistortionProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DC771592A9360EB00C04B82 /* DistortionProcessor.cpp */; };
+		1DC7715D2A93612C00C04B82 /* DistortionProcessorWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7715C2A93612C00C04B82 /* DistortionProcessorWrapper.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D0F6CBC2A373A3200C7A6AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D0F6CA22A373A3100C7A6AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D0F6CA92A373A3100C7A6AD;
+			remoteInfo = Audio_Player_Demo;
+		};
+		1D0F6CC62A373A3200C7A6AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D0F6CA22A373A3100C7A6AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D0F6CA92A373A3100C7A6AD;
+			remoteInfo = Audio_Player_Demo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D03595B2A4C915500F67FED /* 12345.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 12345.wav; sourceTree = "<group>"; };
+		1D0F6CAA2A373A3100C7A6AD /* EffectPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EffectPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0F6CAD2A373A3100C7A6AD /* EffectPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectPlayerApp.swift; sourceTree = "<group>"; };
+		1D0F6CAF2A373A3100C7A6AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1D0F6CB12A373A3200C7A6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D0F6CB32A373A3200C7A6AD /* EffectPlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EffectPlayer.entitlements; sourceTree = "<group>"; };
+		1D0F6CB52A373A3200C7A6AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D0F6CBB2A373A3200C7A6AD /* EffectPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EffectPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0F6CC52A373A3200C7A6AD /* EffectPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EffectPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D398D852AA3018A006C9E3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1D398D872AA301FA006C9E3E /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		1D42D9AC2A5A6B0500732054 /* AudioSoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSoundModel.swift; sourceTree = "<group>"; };
+		1D42D9AE2A5A6B7B00732054 /* MicrophoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneModel.swift; sourceTree = "<group>"; };
+		1DAD004A2A5F115200BE5F14 /* EffectPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EffectPlayer-Info.plist"; path = "EffectPlayer/EffectPlayer-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1DC771582A9360EB00C04B82 /* EffectPlayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EffectPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
+		1DC771592A9360EB00C04B82 /* DistortionProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DistortionProcessor.cpp; sourceTree = "<group>"; };
+		1DC7715A2A9360EB00C04B82 /* DistortionProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistortionProcessor.h; sourceTree = "<group>"; };
+		1DC7715C2A93612C00C04B82 /* DistortionProcessorWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DistortionProcessorWrapper.mm; sourceTree = "<group>"; };
+		1DC7715E2A93614A00C04B82 /* DistortionProcessorWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistortionProcessorWrapper.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D0F6CA72A373A3100C7A6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D0F6CE12A373D2A00C7A6AD /* AudioKit in Frameworks */,
+				1D0F6CDE2A373A6100C7A6AD /* DevoloopAudioKit in Frameworks */,
+				1D398D842AA300A5006C9E3E /* FirebaseDatabase in Frameworks */,
+				1D0359E42A4CA89600F67FED /* SoundpipeAudioKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D0F6CB82A373A3200C7A6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D0F6CC22A373A3200C7A6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D0F6CA12A373A3100C7A6AD = {
+			isa = PBXGroup;
+			children = (
+				1D0F6CAC2A373A3100C7A6AD /* EffectPlayer */,
+				1D0F6CAB2A373A3100C7A6AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D0F6CAB2A373A3100C7A6AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F6CAA2A373A3100C7A6AD /* EffectPlayer.app */,
+				1D0F6CBB2A373A3200C7A6AD /* EffectPlayerTests.xctest */,
+				1D0F6CC52A373A3200C7A6AD /* EffectPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D0F6CAC2A373A3100C7A6AD /* EffectPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F6CAD2A373A3100C7A6AD /* EffectPlayerApp.swift */,
+				1D42D9AC2A5A6B0500732054 /* AudioSoundModel.swift */,
+				1D42D9AE2A5A6B7B00732054 /* MicrophoneModel.swift */,
+				1D398D872AA301FA006C9E3E /* FirebaseModel.swift */,
+				1D0F6CAF2A373A3100C7A6AD /* ContentView.swift */,
+				1DAD004A2A5F115200BE5F14 /* EffectPlayer-Info.plist */,
+				1DC771572A935F1C00C04B82 /* Distortion */,
+				1D03595B2A4C915500F67FED /* 12345.wav */,
+				1D0F6CB12A373A3200C7A6AD /* Assets.xcassets */,
+				1D0F6CB32A373A3200C7A6AD /* EffectPlayer.entitlements */,
+				1D398D852AA3018A006C9E3E /* GoogleService-Info.plist */,
+				1D0F6CB42A373A3200C7A6AD /* Preview Content */,
+			);
+			path = EffectPlayer;
+			sourceTree = "<group>";
+		};
+		1D0F6CB42A373A3200C7A6AD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F6CB52A373A3200C7A6AD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1DC771572A935F1C00C04B82 /* Distortion */ = {
+			isa = PBXGroup;
+			children = (
+				1DC771582A9360EB00C04B82 /* EffectPlayer-Bridging-Header.h */,
+				1DC771592A9360EB00C04B82 /* DistortionProcessor.cpp */,
+				1DC7715A2A9360EB00C04B82 /* DistortionProcessor.h */,
+				1DC7715C2A93612C00C04B82 /* DistortionProcessorWrapper.mm */,
+				1DC7715E2A93614A00C04B82 /* DistortionProcessorWrapper.h */,
+			);
+			path = Distortion;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D0F6CA92A373A3100C7A6AD /* EffectPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D0F6CCF2A373A3200C7A6AD /* Build configuration list for PBXNativeTarget "EffectPlayer" */;
+			buildPhases = (
+				1D0F6CA62A373A3100C7A6AD /* Sources */,
+				1D0F6CA72A373A3100C7A6AD /* Frameworks */,
+				1D0F6CA82A373A3100C7A6AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EffectPlayer;
+			packageProductDependencies = (
+				1D0F6CDD2A373A6100C7A6AD /* DevoloopAudioKit */,
+				1D0F6CE02A373D2A00C7A6AD /* AudioKit */,
+				1D0359E32A4CA89600F67FED /* SoundpipeAudioKit */,
+				1D398D832AA300A5006C9E3E /* FirebaseDatabase */,
+			);
+			productName = Audio_Player_Demo;
+			productReference = 1D0F6CAA2A373A3100C7A6AD /* EffectPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D0F6CBA2A373A3200C7A6AD /* EffectPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D0F6CD22A373A3200C7A6AD /* Build configuration list for PBXNativeTarget "EffectPlayerTests" */;
+			buildPhases = (
+				1D0F6CB72A373A3200C7A6AD /* Sources */,
+				1D0F6CB82A373A3200C7A6AD /* Frameworks */,
+				1D0F6CB92A373A3200C7A6AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D0F6CBD2A373A3200C7A6AD /* PBXTargetDependency */,
+			);
+			name = EffectPlayerTests;
+			productName = Audio_Player_DemoTests;
+			productReference = 1D0F6CBB2A373A3200C7A6AD /* EffectPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1D0F6CC42A373A3200C7A6AD /* EffectPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D0F6CD52A373A3200C7A6AD /* Build configuration list for PBXNativeTarget "EffectPlayerUITests" */;
+			buildPhases = (
+				1D0F6CC12A373A3200C7A6AD /* Sources */,
+				1D0F6CC22A373A3200C7A6AD /* Frameworks */,
+				1D0F6CC32A373A3200C7A6AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D0F6CC72A373A3200C7A6AD /* PBXTargetDependency */,
+			);
+			name = EffectPlayerUITests;
+			productName = Audio_Player_DemoUITests;
+			productReference = 1D0F6CC52A373A3200C7A6AD /* EffectPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D0F6CA22A373A3100C7A6AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					1D0F6CA92A373A3100C7A6AD = {
+						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
+					};
+					1D0F6CBA2A373A3200C7A6AD = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 1D0F6CA92A373A3100C7A6AD;
+					};
+					1D0F6CC42A373A3200C7A6AD = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 1D0F6CA92A373A3100C7A6AD;
+					};
+				};
+			};
+			buildConfigurationList = 1D0F6CA52A373A3100C7A6AD /* Build configuration list for PBXProject "EffectPlayer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D0F6CA12A373A3100C7A6AD;
+			packageReferences = (
+				1D0F6CDC2A373A6100C7A6AD /* XCRemoteSwiftPackageReference "DevoloopAudioKit" */,
+				1D0F6CDF2A373D2A00C7A6AD /* XCRemoteSwiftPackageReference "AudioKit" */,
+				1D0359E22A4CA89600F67FED /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				1D398D822AA300A5006C9E3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 1D0F6CAB2A373A3100C7A6AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D0F6CA92A373A3100C7A6AD /* EffectPlayer */,
+				1D0F6CBA2A373A3200C7A6AD /* EffectPlayerTests */,
+				1D0F6CC42A373A3200C7A6AD /* EffectPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D0F6CA82A373A3100C7A6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D0F6CB62A373A3200C7A6AD /* Preview Assets.xcassets in Resources */,
+				1D398D862AA3018A006C9E3E /* GoogleService-Info.plist in Resources */,
+				1D03595C2A4C915500F67FED /* 12345.wav in Resources */,
+				1D0F6CB22A373A3200C7A6AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D0F6CB92A373A3200C7A6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D0F6CC32A373A3200C7A6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D0F6CA62A373A3100C7A6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D42D9AD2A5A6B0500732054 /* AudioSoundModel.swift in Sources */,
+				1D42D9AF2A5A6B7B00732054 /* MicrophoneModel.swift in Sources */,
+				1DC7715B2A9360EB00C04B82 /* DistortionProcessor.cpp in Sources */,
+				1DC7715D2A93612C00C04B82 /* DistortionProcessorWrapper.mm in Sources */,
+				1D0F6CB02A373A3100C7A6AD /* ContentView.swift in Sources */,
+				1D0F6CAE2A373A3100C7A6AD /* EffectPlayerApp.swift in Sources */,
+				1D398D882AA301FA006C9E3E /* FirebaseModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D0F6CB72A373A3200C7A6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D0F6CC12A373A3200C7A6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D0F6CBD2A373A3200C7A6AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D0F6CA92A373A3100C7A6AD /* EffectPlayer */;
+			targetProxy = 1D0F6CBC2A373A3200C7A6AD /* PBXContainerItemProxy */;
+		};
+		1D0F6CC72A373A3200C7A6AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D0F6CA92A373A3100C7A6AD /* EffectPlayer */;
+			targetProxy = 1D0F6CC62A373A3200C7A6AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D0F6CCD2A373A3200C7A6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1D0F6CCE2A373A3200C7A6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1D0F6CD02A373A3200C7A6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = EffectPlayer/EffectPlayer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EffectPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = 632BYDZ8FU;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EffectPlayer/EffectPlayer-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access for uploading Images";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Need location access for updating nearby friends";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app will use your location to show you cool stuff near you.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone access for uploading videos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "NeedLibrary access for uploading Images";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hcrane.EffectSwitcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EffectPlayer/Distortion/EffectPlayer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D0F6CD12A373A3200C7A6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = EffectPlayer/EffectPlayer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EffectPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = 632BYDZ8FU;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EffectPlayer/EffectPlayer-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access for uploading Images";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Need location access for updating nearby friends";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app will use your location to show you cool stuff near you.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone access for uploading videos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "NeedLibrary access for uploading Images";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hcrane.EffectSwitcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EffectPlayer/Distortion/EffectPlayer-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1D0F6CD32A373A3200C7A6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 632BYDZ8FU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hcrane.EffectSwitcher.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EffectPlayer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EffectPlayer";
+			};
+			name = Debug;
+		};
+		1D0F6CD42A373A3200C7A6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 632BYDZ8FU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hcrane.EffectSwitcher.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EffectPlayer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EffectPlayer";
+			};
+			name = Release;
+		};
+		1D0F6CD62A373A3200C7A6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 632BYDZ8FU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hcrane.EffectSwitcher.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EffectPlayer;
+			};
+			name = Debug;
+		};
+		1D0F6CD72A373A3200C7A6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 632BYDZ8FU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hcrane.EffectSwitcher.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EffectPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D0F6CA52A373A3100C7A6AD /* Build configuration list for PBXProject "EffectPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0F6CCD2A373A3200C7A6AD /* Debug */,
+				1D0F6CCE2A373A3200C7A6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D0F6CCF2A373A3200C7A6AD /* Build configuration list for PBXNativeTarget "EffectPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0F6CD02A373A3200C7A6AD /* Debug */,
+				1D0F6CD12A373A3200C7A6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D0F6CD22A373A3200C7A6AD /* Build configuration list for PBXNativeTarget "EffectPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0F6CD32A373A3200C7A6AD /* Debug */,
+				1D0F6CD42A373A3200C7A6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D0F6CD52A373A3200C7A6AD /* Build configuration list for PBXNativeTarget "EffectPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0F6CD62A373A3200C7A6AD /* Debug */,
+				1D0F6CD72A373A3200C7A6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D0359E22A4CA89600F67FED /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.3.1;
+			};
+		};
+		1D0F6CDC2A373A6100C7A6AD /* XCRemoteSwiftPackageReference "DevoloopAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/DevoloopAudioKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.3.0;
+			};
+		};
+		1D0F6CDF2A373D2A00C7A6AD /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.3.0;
+			};
+		};
+		1D398D822AA300A5006C9E3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D0359E32A4CA89600F67FED /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D0359E22A4CA89600F67FED /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
+		};
+		1D0F6CDD2A373A6100C7A6AD /* DevoloopAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D0F6CDC2A373A6100C7A6AD /* XCRemoteSwiftPackageReference "DevoloopAudioKit" */;
+			productName = DevoloopAudioKit;
+		};
+		1D0F6CE02A373D2A00C7A6AD /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D0F6CDF2A373D2A00C7A6AD /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		1D398D832AA300A5006C9E3E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D398D822AA300A5006C9E3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1D0F6CA22A373A3100C7A6AD /* Project object */;
+}
