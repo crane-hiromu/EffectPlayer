@@ -13,6 +13,6 @@
 @property (nonatomic, strong) AVAudioEngine *engine;
 
 - (void)applyDistortionToBuffer:(AVAudioPCMBuffer *)buffer;
-//- (void)applyDistortionToBufferWithEngine;
+- (void)applyDistortionToBufferWithEngine;
 
 @end
