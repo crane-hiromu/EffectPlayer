@@ -28,6 +28,7 @@ struct ContentView: View {
             effectDistorionFromAVAudioUnitButton
             effectDistorionFromAudioKitButton
             effectRhinoGuitarProcessorButton
+            effectRhinoGuitarProcessorWithReverbButton
             effectSwiftSigmoidDistotionButton
             effectCppSigmoidDistotionButton
         }
@@ -118,7 +119,16 @@ private extension ContentView {
             microphoneModel.disconnect()
             microphoneModel.attachRhinoGuitarProcessor()
         }) {
-            buttonText("Distorion from RhinoGuitarProcessorButton")
+            buttonText("Distorion from RhinoGuitarProcessor")
+        }
+    }
+    
+    var effectRhinoGuitarProcessorWithReverbButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachRhinoGuitarProcessorWithReverb()
+        }) {
+            buttonText("Distorion from RhinoGuitarProcessor with Reverb")
         }
     }
     

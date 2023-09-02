@@ -8,6 +8,7 @@
 import Foundation
 import AVFAudio
 import AVFoundation
+import CoreAudio
 import AudioKit
 import SoundpipeAudioKit
 import DevoloopAudioKit
@@ -15,30 +16,31 @@ import Combine
 
 final class MicrophoneModel {
     
-    var engine = AVAudioEngine()
-    var audioEngine = AudioEngine()
-    let processor = DistortionProcessorWrapper()
+    private var engine = AVAudioEngine()
+    private var audioEngine = AudioEngine()
+    private let processor = DistortionProcessorWrapper()
     
-    var cancellable: AnyCancellable?
-    let firebaseModel: FirebaseModel = {
+    private var cancellable: AnyCancellable?
+    private let firebaseModel: FirebaseModel = {
         let model = FirebaseModel()
         model.startMessageListener()
         return model
     }()
     
     func connect() {
-        print("----\(#function)----")
-        
         do {
             Settings.bufferLength = .short
             try Settings.setSession(
                 category: .playAndRecord,
                 with: [.defaultToSpeaker, .mixWithOthers, .allowBluetoothA2DP]
             )
-        } catch let err {
-            print(err)
+        } catch {
+            print("failure: \(error)")
         }
-        
+        bind()
+    }
+    
+    func bind() {
         cancellable = firebaseModel
             .effectType
             .compactMap { $0 }
@@ -63,7 +65,6 @@ final class MicrophoneModel {
         
         engine = AVAudioEngine()
         audioEngine = AudioEngine()
-        
         // objc
         processor.engine.stop()
         processor.engine?.inputNode.removeTap(onBus: 0)
@@ -128,21 +129,10 @@ final class MicrophoneModel {
         let output = engine.outputNode
         let format = engine.inputNode.inputFormat(forBus: 0)
 
-//        let comp = AVAudioUnitEffect(audioComponentDescription: .init(
-//            appleEffect: kAudioUnitSubType_DynamicsProcessor)
-//        )
-//        engine.attach(comp)
-        
         let distortion = AVAudioUnitDistortion()
-//        distortion.loadFactoryPreset(.drumsBitBrush)
         distortion.preGain = 5
         distortion.wetDryMix = 20
         engine.attach(distortion)
-        
-//        let reverb = AVAudioUnitReverb()
-//        reverb.loadFactoryPreset(.smallRoom)
-//        reverb.wetDryMix = 20
-//        engine.attach(reverb)
 
         engine.connect(input, to: distortion, format: format)
         engine.connect(distortion, to: output, format: format)
@@ -171,23 +161,24 @@ final class MicrophoneModel {
     }
     
     func attachRhinoGuitarProcessor() {
-        if audioEngine.input == nil {
-            return
-        }
+        guard let input = audioEngine.input else { return }
         
-        let comp = DynaRageCompressor(audioEngine.input!)
-        
-        
+        let comp = DynaRageCompressor(input)
         let node = RhinoGuitarProcessor(comp, distortion: 3)
-//        RhinoGuitarProcessor(
-//            comp,
-//            preGain: 0.5,
-//            postGain: 0.5,
-//            lowGain: 0.5,
-//            midGain: 0.5,
-//            highGain: 0.5,
-//            distortion: 5
-//        )
+        audioEngine.output = node
+        
+        do {
+            try audioEngine.start()
+        } catch {
+            debugPrint("failure")
+        }
+    }
+    
+    func attachRhinoGuitarProcessorWithReverb() {
+        guard let input = audioEngine.input else { return }
+        
+        let comp = DynaRageCompressor(input)
+        let node = RhinoGuitarProcessor(comp, distortion: 3)
         audioEngine.output = Reverb(node)
         
         do {
@@ -262,10 +253,7 @@ final class MicrophoneModel {
     }
 }
 
-import CoreAudio
-
-// sigmoid
-extension MicrophoneModel {
+private extension MicrophoneModel {
     
     func applyDistortion(to buffer: AVAudioPCMBuffer, gain: Float, threshold: Float) {
         guard let floatChannelData = buffer.floatChannelData else { return }
