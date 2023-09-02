@@ -18,6 +18,7 @@ enum EffectType: String {
     case reverb = "didTapReverb"
     case avAudioEngine = "didTapDistOfAVAudioEngine"
     case devoloopAudioKit = "didTapDistOfDevoloopAudioKit"
+    case devoloopAudioKitWithRev = "didTapDistOfDevoloopAudioKitAndRev"
     case cppSigmoid = "didTapDistOfCppSigmoid"
 }
 

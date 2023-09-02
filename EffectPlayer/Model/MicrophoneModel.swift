@@ -45,16 +45,7 @@ final class MicrophoneModel {
             .effectType
             .compactMap { $0 }
             .sink { [weak self] type in
-                self?.disconnect()
-                
-                switch type {
-                case .disconnect: break
-                case .clean: self?.attachClean()
-                case .reverb: self?.attachReverb()
-                case .avAudioEngine: self?.attachDistotion()
-                case .devoloopAudioKit: self?.attachRhinoGuitarProcessor()
-                case .cppSigmoid: self?.attachCppSigmoidDistortion()
-                }
+                self?.handleFirebase(with: type)
             }
     }
     
@@ -275,5 +266,19 @@ private extension MicrophoneModel {
         let k = 2 / (1 - exp(-2 * threshold))
         let distortedSample = (1 + exp(-2 * threshold * (sample * gain))) / (1 + exp(-2 * threshold)) - 0.5
         return distortedSample * k
+    }
+    
+    func handleFirebase(with type: EffectType) {
+        disconnect()
+        
+        switch type {
+        case .disconnect: break
+        case .clean: attachClean()
+        case .reverb: attachReverb()
+        case .avAudioEngine: attachDistotion()
+        case .devoloopAudioKit: attachRhinoGuitarProcessor()
+        case .devoloopAudioKitWithRev: attachRhinoGuitarProcessorWithReverb()
+        case .cppSigmoid: attachCppSigmoidDistortion()
+        }
     }
 }
