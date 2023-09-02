@@ -190,7 +190,7 @@ final class MicrophoneModel {
         input.installTap(onBus: .zero,
                          bufferSize: 1024,
                          format: format) { [weak self] buffer, time in
-            self?.applyDistortion(to: buffer, gain: 1.5, threshold: 0.8)
+            self?.applyDistortion(to: buffer, gain: 50, level: 0.2)
             player.scheduleBuffer(buffer)
         }
         
@@ -246,7 +246,7 @@ final class MicrophoneModel {
 
 private extension MicrophoneModel {
     
-    func applyDistortion(to buffer: AVAudioPCMBuffer, gain: Float, threshold: Float) {
+    func applyDistortion(to buffer: AVAudioPCMBuffer, gain: Float, level: Float) {
         guard let floatChannelData = buffer.floatChannelData else { return }
         
         // ex ステレオオーディオ信号の場合、左と右の2つのチャンネル、左側と右側の音声情報を格納
@@ -256,16 +256,14 @@ private extension MicrophoneModel {
             // サンプリングすることで得られた、フレームごとのサンプル値を、シグモイド関数で変化させる
             for frame in 0..<Int(buffer.frameLength) {
                 let sample = channelData[frame]
-                let distortedSample = sigmoidDistortion(sample: sample, gain: gain, threshold: threshold)
+                let distortedSample = sigmoidDistortion(sample: sample, gain: gain, level: level)
                 channelData[frame] = distortedSample
             }
         }
     }
 
-    func sigmoidDistortion(sample: Float, gain: Float, threshold: Float) -> Float {
-        let k = 2 / (1 - exp(-2 * threshold))
-        let distortedSample = (1 + exp(-2 * threshold * (sample * gain))) / (1 + exp(-2 * threshold)) - 0.5
-        return distortedSample * k
+    func sigmoidDistortion(sample: Float, gain: Float, level: Float) -> Float {
+        tanh(5 * sample * gain / 2) * level
     }
     
     func handleFirebase(with type: EffectType) {

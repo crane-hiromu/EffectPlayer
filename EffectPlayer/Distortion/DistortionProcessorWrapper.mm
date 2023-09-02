@@ -40,8 +40,8 @@
     distortionProcessor->applyDistortion(data,
                                          channelCount,
                                          frameLength,
-                                         2.0,
-                                         0.8);
+                                         50.0,
+                                         0.2);
     delete[] data;
 }
 

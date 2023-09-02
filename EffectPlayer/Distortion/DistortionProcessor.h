@@ -13,9 +13,9 @@ public:
                          unsigned int channelCount,
                          unsigned int frameLength,
                          float gain,
-                         float threshold);
+                         float level);
 
-    float sigmoidDistortion(float sample, float gain, float threshold);
+    float sigmoidDistortion(float sample, float gain, float level);
     
 private:
     float gain_;

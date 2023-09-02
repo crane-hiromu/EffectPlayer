@@ -13,7 +13,7 @@ void DistortionProcessor::applyDistortion(float** data,
                                           unsigned int channelCount,
                                           unsigned int frameLength,
                                           float gain,
-                                          float threshold)
+                                          float level)
 {
     if (data == nullptr || channelCount == 0 || frameLength == 0) {
         throw std::invalid_argument("Invalid data or parameters");
@@ -28,7 +28,7 @@ void DistortionProcessor::applyDistortion(float** data,
             
             for (unsigned int frame = 0; frame < frameLength; ++frame) {
                 float sample = channelData[frame];
-                float distortedSample = sigmoidDistortion(sample, gain, threshold);
+                float distortedSample = sigmoidDistortion(sample, gain, level);
                 channelData[frame] = distortedSample;
             }
         });
@@ -39,8 +39,6 @@ void DistortionProcessor::applyDistortion(float** data,
     }
 }
 
-float DistortionProcessor::sigmoidDistortion(float sample, float gain, float threshold) {
-    float k = 2 / (1 - std::exp(-2 * threshold));
-    float distortedSample = (1 + std::exp(-2 * threshold * (sample * gain))) / (1 + std::exp(-2 * threshold)) - 0.5;
-    return distortedSample * k;
+float DistortionProcessor::sigmoidDistortion(float sample, float gain, float level) {
+    return tanh(5 * sample * gain / 2) * level;
 }
