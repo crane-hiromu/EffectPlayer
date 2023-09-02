@@ -60,8 +60,9 @@ final class MicrophoneModel {
                 self?.disconnect()
                 
                 switch type {
-                case .clean: self?.normal()
                 case .disconnect: break
+                case .clean: self?.normal()
+                case .reverb: self?.withReverb()
                 case .avAudioEngine: self?.withDistotion()
                 case .devoloopAudioKit: self?.withRhinoGuitarProcessor()
                 case .cppSigmoid: self?.applyDistortionToBufferFromCpp()

@@ -15,18 +15,18 @@ struct ContentView: View {
     let audioMgr = AudioMgr()
     
     var body: some View {
-        VStack {
-            Button("1. wav play demo") {
+        VStack(alignment: .leading) {
+            Button("1. Play wav") {
                 audioSoundModel.disconnect()
-                audioSoundModel.tap_1()
+                audioSoundModel.playWav()
             }
-            Button("2. Oscillator play demo") {
+            Button("2. Play AudioKit Oscillator") {
                 audioSoundModel.disconnect()
-                audioSoundModel.tap_2()
+                audioSoundModel.playOscillator()
             }
-            Button("3. wav effect demo") {
+            Button("3. Play wav with AudioKit effect") {
                 audioSoundModel.disconnect()
-                audioSoundModel.tap_3()
+                audioSoundModel.playWavWithAudioKit()
             }
         }
         VStack {

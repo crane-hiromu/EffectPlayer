@@ -114,17 +114,15 @@
 			isa = PBXGroup;
 			children = (
 				1D0F6CAD2A373A3100C7A6AD /* EffectPlayerApp.swift */,
-				1D42D9AC2A5A6B0500732054 /* AudioSoundModel.swift */,
-				1D42D9AE2A5A6B7B00732054 /* MicrophoneModel.swift */,
-				1D398D872AA301FA006C9E3E /* FirebaseModel.swift */,
 				1D0F6CAF2A373A3100C7A6AD /* ContentView.swift */,
-				1DAD004A2A5F115200BE5F14 /* EffectPlayer-Info.plist */,
+				1D9553842AA3AEF500A55CDC /* Model */,
 				1DC771572A935F1C00C04B82 /* Distortion */,
+				1D0F6CB42A373A3200C7A6AD /* Preview Content */,
+				1DAD004A2A5F115200BE5F14 /* EffectPlayer-Info.plist */,
+				1D398D852AA3018A006C9E3E /* GoogleService-Info.plist */,
 				1D03595B2A4C915500F67FED /* 12345.wav */,
 				1D0F6CB12A373A3200C7A6AD /* Assets.xcassets */,
 				1D0F6CB32A373A3200C7A6AD /* EffectPlayer.entitlements */,
-				1D398D852AA3018A006C9E3E /* GoogleService-Info.plist */,
-				1D0F6CB42A373A3200C7A6AD /* Preview Content */,
 			);
 			path = EffectPlayer;
 			sourceTree = "<group>";
@@ -135,6 +133,16 @@
 				1D0F6CB52A373A3200C7A6AD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D9553842AA3AEF500A55CDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D42D9AC2A5A6B0500732054 /* AudioSoundModel.swift */,
+				1D42D9AE2A5A6B7B00732054 /* MicrophoneModel.swift */,
+				1D398D872AA301FA006C9E3E /* FirebaseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1DC771572A935F1C00C04B82 /* Distortion */ = {

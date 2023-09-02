@@ -13,8 +13,9 @@ import Combine
  呼び出し側に登録されたKey
  */
 enum EffectType: String {
-    case clean = "didTapClean"
     case disconnect = "didTapDisconnect"
+    case clean = "didTapClean"
+    case reverb = "didTapReverb"
     case avAudioEngine = "didTapDistOfAVAudioEngine"
     case devoloopAudioKit = "didTapDistOfDevoloopAudioKit"
     case cppSigmoid = "didTapDistOfCppSigmoid"
