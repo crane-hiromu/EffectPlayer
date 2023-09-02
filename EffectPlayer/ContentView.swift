@@ -10,72 +10,146 @@ import Foundation
 
 struct ContentView: View {
     
-    let audioSoundModel = AudioSoundModel()
-    let microphoneModel = MicrophoneModel()
-    let audioMgr = AudioMgr()
+    private let audioSoundModel = AudioSoundModel()
+    private let microphoneModel = MicrophoneModel()
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Button("1. Play wav") {
-                audioSoundModel.disconnect()
-                audioSoundModel.playWav()
-            }
-            Button("2. Play AudioKit Oscillator") {
-                audioSoundModel.disconnect()
-                audioSoundModel.playOscillator()
-            }
-            Button("3. Play wav with AudioKit effect") {
-                audioSoundModel.disconnect()
-                audioSoundModel.playWavWithAudioKit()
-            }
+        VStack {
+            Text("Play sound demo")
+            samplePlayWavButton
+            samplePlayAudioKitOscillatorButton
+            samplePlayWavWithAudioKitEffectButton
         }
         VStack {
-            Button("normal") {
-                microphoneModel.disconnect()
-                microphoneModel.normal()
-            }
-            Button("withReverb") {
-                microphoneModel.disconnect()
-                microphoneModel.withReverb()
-            }
-            Button("withDelay") {
-                microphoneModel.disconnect()
-                microphoneModel.withDelay()
-            }
-            Button("withDistotion") {
-                microphoneModel.disconnect()
-                microphoneModel.withDistotion()
-            }
-            Button("withKitDistotion") {
-                microphoneModel.disconnect()
-                microphoneModel.withKitDistotion()
-            }
-            Button("withRhinoGuitarProcessor") {
-                microphoneModel.disconnect()
-                microphoneModel.withRhinoGuitarProcessor()
-            }
-            Button("withSigmoidDistotion") {
-                microphoneModel.disconnect()
-                microphoneModel.withSigmoidDistotion()
-            }
-            Button("applyDistortionToBufferFromCpp") {
-                microphoneModel.disconnect()
-                microphoneModel.applyDistortionToBufferFromCpp()
-            }
-//            Button("applyDistortionToBufferFromCppWithEngine") {
-//                microphoneModel.disconnect()
-//                microphoneModel.applyDistortionToBufferFromCppWithEngine()
-//            }
+            Text("Effect demo")
+            effectCleanButton
+            effectReverbButton
+            effectDelayButton
+            effectDistorionFromAVAudioUnitButton
+            effectDistorionFromAudioKitButton
+            effectRhinoGuitarProcessorButton
+            effectSwiftSigmoidDistotionButton
+            effectCppSigmoidDistotionButton
         }
         .padding()
-        .onAppear {
-//            do {
-//                try audioMgr.connect()
-//            } catch {
-//
-//            }
-            microphoneModel.connect()
+        .onAppear { microphoneModel.connect() }
+        .onDisappear { microphoneModel.disconnect() }
+    }
+}
+
+private extension ContentView {
+    
+    // Audio sample
+    
+    var samplePlayWavButton: some View {
+        Button(action: {
+            audioSoundModel.disconnect()
+            audioSoundModel.playWav()
+        }) {
+            buttonText("1. Play wav")
         }
+    }
+    var samplePlayAudioKitOscillatorButton: some View {
+        Button(action: {
+            audioSoundModel.disconnect()
+            audioSoundModel.playOscillator()
+        }) {
+            buttonText("2. Play AudioKit Oscillator")
+        }
+    }
+    var samplePlayWavWithAudioKitEffectButton: some View {
+        Button(action: {
+            audioSoundModel.disconnect()
+            audioSoundModel.playWavWithAudioKit()
+        }) {
+            buttonText("3. Play wav with AudioKit effect")
+        }
+    }
+    
+    // Effect Sample
+    
+    var effectCleanButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachClean()
+        }) {
+            buttonText("Clean")
+        }
+    }
+    
+    var effectReverbButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachReverb()
+        }) {
+            buttonText("Reverb")
+        }
+    }
+    
+    var effectDelayButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachDelay()
+        }) {
+            buttonText("Delay")
+        }
+    }
+    
+    var effectDistorionFromAVAudioUnitButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachDistotion()
+        }) {
+            buttonText("Distorion from AVAudioUnit")
+        }
+    }
+    
+    var effectDistorionFromAudioKitButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachAudioKitDistotion()
+        }) {
+            buttonText("Distorion from AudioKit")
+        }
+    }
+    
+    var effectRhinoGuitarProcessorButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachRhinoGuitarProcessor()
+        }) {
+            buttonText("Distorion from RhinoGuitarProcessorButton")
+        }
+    }
+    
+    var effectSwiftSigmoidDistotionButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachSwiftSigmoidDistotion()
+        }) {
+            buttonText("Sigmoid Distotion on Swift")
+        }
+    }
+    
+    var effectCppSigmoidDistotionButton: some View {
+        Button(action: {
+            microphoneModel.disconnect()
+            microphoneModel.attachCppSigmoidDistortion()
+        }) {
+            buttonText("Sigmoid Distotion on C++")
+        }
+    }
+    
+    // Common
+    
+    func buttonText(_ label: String) -> some View {
+        Text(label)
+            .bold()
+            .padding()
+            .frame(width: 400, height: 44)
+            .foregroundColor(Color.white)
+            .background(Color.blue)
+            .cornerRadius(25)
     }
 }
 

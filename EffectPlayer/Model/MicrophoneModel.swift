@@ -13,20 +13,6 @@ import SoundpipeAudioKit
 import DevoloopAudioKit
 import Combine
 
-final class AudioMgr {
-    let session = AVAudioSession.sharedInstance()
-    let engine = AVAudioEngine()
-    
-    func connect() throws {
-        try session.setCategory(.playAndRecord)
-        try session.setActive(true)
-
-        engine.connect(engine.inputNode, to: engine.outputNode, format: nil)
-        engine.prepare()
-        try engine.start()
-    }
-}
-
 final class MicrophoneModel {
     
     var engine = AVAudioEngine()
@@ -61,11 +47,11 @@ final class MicrophoneModel {
                 
                 switch type {
                 case .disconnect: break
-                case .clean: self?.normal()
-                case .reverb: self?.withReverb()
-                case .avAudioEngine: self?.withDistotion()
-                case .devoloopAudioKit: self?.withRhinoGuitarProcessor()
-                case .cppSigmoid: self?.applyDistortionToBufferFromCpp()
+                case .clean: self?.attachClean()
+                case .reverb: self?.attachReverb()
+                case .avAudioEngine: self?.attachDistotion()
+                case .devoloopAudioKit: self?.attachRhinoGuitarProcessor()
+                case .cppSigmoid: self?.attachCppSigmoidDistortion()
                 }
             }
     }
@@ -84,7 +70,7 @@ final class MicrophoneModel {
         processor.engine = AVAudioEngine()
     }
     
-    func normal() {
+    func attachClean() {
         let input = engine.inputNode
         let output = engine.outputNode
         engine.connect(input, to: output, format: nil)
@@ -97,7 +83,7 @@ final class MicrophoneModel {
         }
     }
     
-    func withReverb() {
+    func attachReverb() {
         let input = engine.inputNode
         let output = engine.outputNode
         let format = engine.inputNode.inputFormat(forBus: 0)
@@ -117,7 +103,7 @@ final class MicrophoneModel {
         }
     }
     
-    func withDelay() {
+    func attachDelay() {
         let input = engine.inputNode
         let output = engine.outputNode
         let format = engine.inputNode.inputFormat(forBus: 0)
@@ -137,7 +123,7 @@ final class MicrophoneModel {
         }
     }
     
-    func withDistotion() {
+    func attachDistotion() {
         let input = engine.inputNode
         let output = engine.outputNode
         let format = engine.inputNode.inputFormat(forBus: 0)
@@ -169,7 +155,7 @@ final class MicrophoneModel {
         }
     }
     
-    func withKitDistotion() {
+    func attachAudioKitDistotion() {
         guard let input = audioEngine.input else { return }
 
         let distortion = Distortion(input)
@@ -184,7 +170,7 @@ final class MicrophoneModel {
         }
     }
     
-    func withRhinoGuitarProcessor() {
+    func attachRhinoGuitarProcessor() {
         if audioEngine.input == nil {
             return
         }
@@ -211,7 +197,7 @@ final class MicrophoneModel {
         }
     }
     
-    func withSigmoidDistotion() {
+    func attachSwiftSigmoidDistotion() {
         let input = engine.inputNode
         let output = engine.outputNode
         let format = engine.inputNode.inputFormat(forBus: 0)
@@ -243,7 +229,7 @@ final class MicrophoneModel {
         }
     }
     
-    func applyDistortionToBufferFromCpp() {
+    func attachCppSigmoidDistortion() {
         let input = engine.inputNode
         let output = engine.outputNode
         let format = engine.inputNode.inputFormat(forBus: 0)
